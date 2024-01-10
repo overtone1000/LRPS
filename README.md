@@ -1,2 +1,2 @@
 # LRPS
-Sample Linux-Rust-Postgres-Svelte web application stack
+- Sample Linux-Rust-Postgres-Svelte web application stack
