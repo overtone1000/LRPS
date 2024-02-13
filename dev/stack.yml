@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+
+  postgres:
+    image:  postgres:12
+    volumes:
+      - lrps_dev:/dbdata
+    ports:
+      - 5432:5432 #open in dev, but don't leave this open in production!
+    environment:
+      - POSTGRES_USER=lrps_testing_user
+      - POSTGRES_PASSWORD=lrps_testing_pw
+      - POSTGRES_DB=lrps_testing_db
+      - PGDATA=/dbdata
+    logging:
+      driver: local
+      options:
+        max-size: 1m
+
+volumes:
+  lrps_dev:
+    name: lrps_dev
